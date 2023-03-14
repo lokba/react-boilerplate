@@ -1,7 +1,14 @@
 {
   "name": "react-boilerplate",
   "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0"
+  },
   "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "esbuild-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "typescript": "^4.9.5",
