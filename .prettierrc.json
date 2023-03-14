@@ -10,6 +10,8 @@
   "importOrder": [
     "^(react)(.*|$)",
     "^(@emotion)(.*|$)",
+    "^(@/Routes)(.*|$)",
+    "^(@/App)(.*|$)",
     "^(@/pages)(.*|$)",
     "^(@/components)(.*|$)",
     "^(@/constants)(.*|$)",

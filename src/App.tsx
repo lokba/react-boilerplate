@@ -1,16 +1,15 @@
-import theme from './styles/theme';
-
 import { Global, ThemeProvider } from '@emotion/react';
 
-import HomePage from '@/pages/HomePage';
+import Routes from '@/Routes';
 
 import globalStyle from '@/styles/globalStyle';
+import theme from '@/styles/theme';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyle} />
-      <HomePage />
+      <Routes />
     </ThemeProvider>
   );
 };
