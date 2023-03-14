@@ -1,28 +1,16 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
-const { ESBuildMinifyPlugin } = require("esbuild-loader");
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 module.exports = () =>
   merge(common, {
-    mode: "production",
+    mode: 'production',
     devtool: false,
-    module: {
-      rules: [
-        {
-          test: /\.(ts|tsx|js|jsx)$/,
-          loader: "esbuild-loader",
-          options: {
-            loader: "tsx",
-            target: "esnext",
-          },
-        },
-      ],
-    },
     optimization: {
       usedExports: true,
       minimizer: [
         new ESBuildMinifyPlugin({
-          target: "esnext",
+          target: 'esnext',
         }),
       ],
     },
