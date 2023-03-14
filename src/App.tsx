@@ -1,7 +1,16 @@
-import HomePage from "@/pages/HomePage";
+import { Global } from '@emotion/react';
+
+import HomePage from '@/pages/HomePage';
+
+import globalStyle from '@/styles/globalStyle';
 
 const App = () => {
-  return <HomePage />;
+  return (
+    <>
+      <Global styles={globalStyle} />
+      <HomePage />
+    </>
+  );
 };
 
 export default App;
