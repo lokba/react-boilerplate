@@ -6,3 +6,15 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Production
+dist
+
+# Misc
+.DS_Store
+.env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.test.local
