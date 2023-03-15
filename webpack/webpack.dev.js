@@ -4,7 +4,7 @@ const common = require('./webpack.common');
 module.exports = () =>
   merge(common, {
     mode: 'development',
-    devtool: 'eval',
+    devtool: 'eval-source-map',
     devServer: {
       port: 3000,
       open: true,

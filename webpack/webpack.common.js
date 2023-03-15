@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash:8].js',
     clean: true,
   },
   module: {
@@ -25,7 +26,8 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[contenthash].[ext]',
+            name: '[name].[contenthash:8].[ext]',
+            outputPath: 'assets/',
           },
         },
       },
@@ -33,6 +35,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'React Boilerplate',
       template: `./public/index.html`,
     }),
     new webpack.ProvidePlugin({
