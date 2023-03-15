@@ -1,7 +1,8 @@
-.github
-.vscode
-.yarn
-dist
+.github/*
+.vscode/*
+.yarn/*
+dist/*
+
 .pnp.cjs
 .pnp.loader.mjs
 .yarnrc.yml
