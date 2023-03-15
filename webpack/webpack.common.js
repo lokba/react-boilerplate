@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -22,14 +21,16 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|svg|webp)$/i,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[contenthash:8].[ext]',
-            outputPath: 'assets/',
-          },
+        test: /\.(png|jpg|webp)$/i,
+        type: 'asset',
+        generator: {
+          filename: 'assets/[name].[contenthash:8][ext]',
         },
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },
